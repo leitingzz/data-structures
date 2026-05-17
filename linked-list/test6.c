@@ -53,6 +53,7 @@ int main()
 
     struct book *temp1 = head;
     struct book *temp2 = NULL;
+    
     while (temp1 != NULL)
     {
         temp2 = temp1->next;
