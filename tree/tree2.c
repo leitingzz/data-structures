@@ -74,5 +74,8 @@ int main()
 
     FreeTree(root);
 
+    root = NULL;
+    printf("内存已全部释放\n");
+    
     return 0;
 }
