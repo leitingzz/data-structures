@@ -30,3 +30,10 @@ treePtr leftRotate(treePtr root){
     return temp2;
 }
 
+treePtr rightRotate(treePtr root){
+    treePtr temp1 = root->left->right;
+    treePtr temp2 = root->left;
+    root->left->right = root;
+    root->left = temp1;
+    return temp2;
+}
