@@ -37,3 +37,20 @@ treePtr rightRotate(treePtr root){
     root->left = temp1;
     return temp2;
 }
+
+treePtr insert(treePtr root,int data){
+    if (root == NULL){
+        treePtr newNode = (treePtr)malloc(sizeof(treeNode));
+        root = newNode;
+        root->data = data;
+        root->height = 1;
+        root->left = root->right = NULL;
+    }
+
+    if(data < root->data){
+        root->left = insert(root->left,data);
+    }else if (data > root->data){
+        root->right = insert(root->right,data);
+    }else return root;
+}
+
