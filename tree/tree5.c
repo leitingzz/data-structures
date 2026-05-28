@@ -52,5 +52,24 @@ treePtr insert(treePtr root,int data){
     }else if (data > root->data){
         root->right = insert(root->right,data);
     }else return root;
+
+    Updataheight(root);
+
+    int Balance = getBalance(root);
+
+    if (Balance > 1 && data < root->left->data) return rightRotate(root);
+    if (Balance < -1 && data > root->right->data) return leftRotate(root);
+
+    if (Balance > 1 && data > root->left->data){
+        root->left = leftRotate(root->left);
+        return rightRotate(root);
+    }
+
+    if (Balance < -1 && data < root->right->data){
+        root->right = rightRotate(root->right);
+        return leftRotate(root);
+    }
+
+    return root;
 }
 
