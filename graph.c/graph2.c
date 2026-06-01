@@ -27,17 +27,32 @@ void addEdge(mygraph g,int a,int b){
 void DFS(mygraph g, int vertex,int visited[]){
     
     visited[vertex] = 1;
-    printf("%d",vertex);
+    printf("%d ",vertex);
 
     for(int i = 0; i < g->numVertices; i++){
-        if(g->matrix[vertex][i] == 1 && visited[i] != 0){
-            void DFS(mygraph g, int i, int visited[i]);
+        if(g->matrix[vertex][i] == 1 && visited[i] == 0){
+            DFS(g, i, visited);
         }
     }
 }
 
 void startDFS(mygraph g){
-    int visited[] = {0};
+    int visited[MAX_VERTICES] = {0};
     int a = 0;
-    void DFS(g, a, visited);
+    DFS(g, a, visited);
+}
+
+int main(){
+
+    mygraph g;
+    initgraph(g,4);
+
+    addEdge(g, 0, 1);
+    addEdge(g, 0, 2);
+    addEdge(g, 1, 3);
+    addEdge(g, 2, 3);
+
+    startDFS(g);
+
+    return 0;
 }
