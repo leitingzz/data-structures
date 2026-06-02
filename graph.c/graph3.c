@@ -9,7 +9,7 @@
 //链表节点结构
 typedef struct{
     int vertex;
-    myNode next;
+    Node* next;
 }Node,*myNode;
 
 //图结构
@@ -18,4 +18,11 @@ typedef struct{
     //核心：是个指针数组，存的是每个顶点链表的头指针
     myNode adjList[MAX_VERTICES];
 }graph,*myGraph;
+
+myNode creatNode(int v){
+    myNode newNode = (myNode)malloc(sizeof(Node));
+    newNode->vertex = v;
+    newNode->next = NULL;
+    return newNode;
+}
 
