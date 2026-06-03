@@ -26,3 +26,15 @@ myNode creatNode(int v){
     return newNode;
 }
 
+void addEdge(myGraph g, int src, int dest){
+    myNode newNode = creatNode(dest);
+    newNode->next = g->adjList[src];
+    g->adjList[src] = newNode;
+
+    newNode = creatNode(src);
+    newNode->next = g->adjList[dest];
+    g->adjList[dest] = newNode;
+}
+
+
+
