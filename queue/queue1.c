@@ -1,5 +1,12 @@
+
+//简单链队列
+
 #include <stdio.h>
 #include <stdlib.h>
+
+//全局变量
+struct book *head = NULL;
+struct book *tail = NULL;
 
 struct book
 {
@@ -7,8 +14,6 @@ struct book
     struct book *next;
 };
 
-struct book *head = NULL;
-struct book *tail = NULL;
 
 void enqueue(int price)
 {

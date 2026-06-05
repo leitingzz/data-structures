@@ -26,6 +26,7 @@ myNode creatNode(int v){
     return newNode;
 }
 
+//头插法链接
 void addEdge(myGraph g, int src, int dest){
     myNode newNode = creatNode(dest);
     newNode->next = g->adjList[src];

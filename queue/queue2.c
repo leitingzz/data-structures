@@ -1,3 +1,6 @@
+
+//不用全局变量
+
 #include <stdio.h>
 #include <stdlib.h>
 

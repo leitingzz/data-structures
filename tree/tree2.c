@@ -1,3 +1,6 @@
+
+//BST树（二叉搜索树）
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -8,6 +11,8 @@ struct Treenode
     struct Treenode *childR;
 };
 
+
+//插入自动排序
 struct Treenode  *insert(struct Treenode *root,int data)
 {
     if (root == NULL)
@@ -33,6 +38,7 @@ struct Treenode  *insert(struct Treenode *root,int data)
     return root;
 };
 
+//中序遍历递归函数
 void inOrder(struct Treenode *root)
 {
     if (root == NULL)
@@ -47,6 +53,7 @@ void inOrder(struct Treenode *root)
     }
 }
 
+//递归释放内存
 void FreeTree(struct Treenode *root)
 {
     if (root == NULL)

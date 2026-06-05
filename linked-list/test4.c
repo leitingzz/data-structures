@@ -1,3 +1,6 @@
+
+//删除节点
+
 #include <stdio.h>
 #include <stdlib.h>
 struct book 

@@ -1,3 +1,6 @@
+
+//循环创建链表（尾插法）
+
 #include <stdio.h>
 #include <stdlib.h>
 struct book

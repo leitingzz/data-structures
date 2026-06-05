@@ -1,3 +1,6 @@
+
+//二叉平衡树（使用typedef）
+
 #include <stdio.h>
 #include <stdlib.h>
 

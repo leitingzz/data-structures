@@ -1,5 +1,5 @@
 
-//图的遍历--深度优先搜索（DFS）
+//图的遍历--深度优先搜索（DFS，邻接矩阵）
 
 #include <stdio.h>
 #include <stdlib.h>

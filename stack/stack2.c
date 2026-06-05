@@ -1,3 +1,6 @@
+
+//压栈（头插法）与弹栈
+
 #include <stdio.h>
 #include <stdlib.h>
 

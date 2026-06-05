@@ -1,3 +1,6 @@
+
+//简单二叉树
+
 #include <stdio.h>
 #include <stdlib.h>
 

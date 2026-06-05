@@ -1,3 +1,6 @@
+
+//左旋转
+
 #include <stdio.h>
 #include <stdlib.h>
 
