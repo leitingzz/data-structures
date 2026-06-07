@@ -38,3 +38,24 @@ void addEdge(mygraph g, int src, int dest){
     temp->next = g->adjList[dest];
     g->adjList[dest] = temp;
 }
+
+void FDS(mygraph g, int vertex, int visited[]){
+    visited[vertex] = 1;
+    printf("%d",vertex);
+
+    myNode temp = g->adjList[vertex];
+    while (temp != NULL){
+        int neighbor = temp->vertex;
+        if(visited[neighbor] == 0){
+            FDS(g, neighbor, visited);
+        }     
+        temp = temp->next;
+    }
+}
+
+void startFDS(mygraph g){
+    int visited[] = {0};
+    printf("邻接表 FDS 遍历轨迹：");
+    FDS(g, 0, visited);
+    printf("\n");
+}
