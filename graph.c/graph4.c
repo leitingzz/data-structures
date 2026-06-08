@@ -23,7 +23,8 @@ myNode creatNode(int n){
     return newNode;
 }
 
-void initgraph(mygraph g){
+void initgraph(mygraph g, int vertices){
+    g->numVertices = vertices;
     for (int i = 0; i < g->numVertices; i++){
             g->adjList[i] = NULL;
     }
@@ -34,28 +35,43 @@ void addEdge(mygraph g, int src, int dest){
     temp->next = g->adjList[src];
     g->adjList[src] = temp;
 
-    myNode temp = creatNode(src);
+    temp = creatNode(src);
     temp->next = g->adjList[dest];
     g->adjList[dest] = temp;
 }
 
-void FDS(mygraph g, int vertex, int visited[]){
+void DFS(mygraph g, int vertex, int visited[]){
     visited[vertex] = 1;
     printf("%d",vertex);
 
     myNode temp = g->adjList[vertex];
+
     while (temp != NULL){
         int neighbor = temp->vertex;
         if(visited[neighbor] == 0){
-            FDS(g, neighbor, visited);
+            DFS(g, neighbor, visited);
         }     
         temp = temp->next;
     }
 }
 
-void startFDS(mygraph g){
-    int visited[] = {0};
+void startDFS(mygraph g){
+    int visited[MAX_VERTICES] = {0};
     printf("邻接表 FDS 遍历轨迹：");
-    FDS(g, 0, visited);
+    DFS(g, 0, visited);
     printf("\n");
+}
+
+int main(){
+    mygraph g;
+    initgraph (g, 4);
+
+    addEdge(g, 0, 1);
+    addEdge(g, 0, 2);
+    addEdge(g, 1, 3);
+    addEdge(g, 2, 3);
+
+    startDFS(g);
+
+    return 0;
 }
