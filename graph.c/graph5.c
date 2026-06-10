@@ -23,3 +23,20 @@ myNode creatNode(int vertex){
     return temp;
 }
 
+void initGraph(mygraph g, int vertices){
+    g->numVertices = vertices;
+    for(int i = 0; i < vertices; i++){
+        g->adjList[i] = NULL;
+    }
+}
+
+void addEdge(mygraph g, int src, int dest){
+    myNode temp = creatNode(dest);
+    temp->next = g->adjList[src];
+    g->adjList[src] = temp;
+
+    temp = creatNode(src);
+    temp->next = g->adjList[dest];
+    g->adjList[dest] = temp;
+}
+
