@@ -40,3 +40,31 @@ void addEdge(mygraph g, int src, int dest){
     g->adjList[dest] = temp;
 }
 
+void BFS(mygraph g, int startvertex){
+    
+    int visited[MAX_VERTICES] = {0};
+    int quene[MAX_VERTICES];
+    int rear = 0;
+    int front = 0;
+
+    visited[startvertex] = 1;
+    quene[rear++] = startvertex;
+    printf("邻接表 BFS 遍历轨迹：");
+
+    while(front < rear){
+        int currenVertex = quene[front++];
+        printf("%d",currenVertex);
+        
+        myNode temp = g->adjList[currenVertex];
+
+        while(temp != NULL){
+            int neighbor = temp->vertex;
+            if(visited[neighbor] == 0){
+                visited[neighbor] = 1;
+                quene[rear++] = neighbor;
+            }
+            temp = temp->next;
+        }
+    }
+    printf("\n");
+}
