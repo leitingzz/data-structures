@@ -1,5 +1,5 @@
 
-//DFS邻接表
+//DFS邻接表+深度优先搜索
 
 #include <stdio.h>
 #include <stdlib.h>
