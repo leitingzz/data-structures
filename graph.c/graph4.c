@@ -71,6 +71,13 @@ int main(){
     addEdge(g, 1, 3);
     addEdge(g, 2, 3);
 
+    /* 0->2->1
+       1->3->0
+       2->3->0
+       3->2->1
+    */
+    
+
     startDFS(g);
 
     return 0;
