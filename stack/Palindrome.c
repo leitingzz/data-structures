@@ -1,3 +1,4 @@
+//判断是否为回文
 // 提示：考试时默认栈的结构体 SqStack 以及基本操作（InitStack, Push, Pop）已经定义好了
 int isPalindrome(char str[], int length) {
     SqStack S;
