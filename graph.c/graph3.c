@@ -16,7 +16,7 @@ typedef struct Node{
 typedef struct{
     int numVertex;
     //核心：是个指针数组，存的是每个顶点链表的头指针
-    myNode adjList[MAX_VERTICES];
+    myNode adjList[MAX_VERTICES]; 
 }graph,*myGraph;
 
 myNode creatNode(int v){
