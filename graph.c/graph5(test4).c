@@ -19,7 +19,7 @@ void BFS(mygraph g, int startVertex){
                 quene[rear++] = neighbor;
                 visited[neighbor] = 1;
             }
-            temp = temp->next;  
+            temp = temp->next;    
         }
     }
 }
