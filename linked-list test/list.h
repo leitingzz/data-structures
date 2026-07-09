@@ -6,5 +6,7 @@ typedef struct Node{
     struct Node* next;
 }Node;
 
+Node* createNode(Node* tail, int data);
+void freeList(Node* head);
 
 #endif // LISTH

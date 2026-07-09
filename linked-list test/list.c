@@ -3,17 +3,24 @@
 #include <string.h>
 #include "list.h"
 
-Node* createNode(Node* head,Node* tail, int data){
+Node* createNode(Node* tail, int data){
     Node* newNode = (Node*)malloc(sizeof(Node));
     newNode->data = data;
     newNode->next = NULL;
-    if(head == NULL){
-        head = newNode;
+    if(tail == NULL){
         tail = newNode;
     } else{
         tail->next = newNode;
-        tail = newNode;
     }
-    return tail;
+    return newNode;
 }
 
+void freeList(Node* head){
+    Node* temp = head;
+    Node* next;
+    while(temp != NULL){
+        next = temp->next;
+        free(temp);
+        temp = next;
+    }
+}
