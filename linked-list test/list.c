@@ -24,3 +24,19 @@ void freeList(Node* head){
         temp = next;
     }
 }
+
+Node* searchByValue(Node* head, int value){
+    Node* temp = head;
+    while(temp->data != value && temp != NULL){
+        temp = temp->next;
+    }
+    return temp;
+}
+
+Node* searchByLocate(Node* head, int locate){
+    Node* temp = head;
+    for(int i = 1; i <= locate; i++){
+        temp = temp->next;
+    }
+    return temp;
+}

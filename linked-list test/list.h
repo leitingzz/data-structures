@@ -8,5 +8,8 @@ typedef struct Node{
 
 Node* createNode(Node* tail, int data);
 void freeList(Node* head);
+Node* searchByValue(Node* head, int value);
+Node* searchByLocate(Node* head, int locate);
+
 
 #endif // LISTH
