@@ -10,6 +10,7 @@ int main(){
     printf("1.创建链表\n");
     printf("2.打印链表\n");
     printf("3.查找节点\n");
+    printf("4.退出程序\n");
     while(1){
         int choice;
         printf("请选择功能：");
@@ -39,7 +40,6 @@ int main(){
                 temp = temp->next;
             }
             printf("\n");
-            freeList(head);
             break;
             
         case 3:
@@ -52,28 +52,29 @@ int main(){
             switch(choice2)
             {
                 case 1:
-                    int value;
-                    printf("请输入所查找的值：");
-                    scanf("%d", &value);
-                    target = searchByValue(head, value);
-                    break;
-
+                int value;
+                printf("请输入所查找的值：");
+                scanf("%d", &value);
+                target = searchByValue(head, value);
+                break;
+                
                 case 2:
-                    int locate;
-                    printf("请输入所查找的位置；");
-                    scanf("%d", &locate);
-                    target = searchByLocate(head, locate);
-                    break;
-
+                int locate;
+                printf("请输入所查找的位置；");
+                scanf("%d", &locate);
+                target = searchByLocate(head, locate);
+                break;
+                
                 default:
-                    break;
+                break;
             }
-
+            
         case 4:
+            freeList(head);
             printf("感谢使用，再见！\n");
             return 0;
-
-        default:
+            
+            default:
             printf("指令无效，请重新输入！\n");
             break;
         }
