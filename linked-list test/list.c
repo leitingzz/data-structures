@@ -34,9 +34,13 @@ Node* searchByValue(Node* head, int value){
 }
 
 Node* searchByLocate(Node* head, int locate){
-    Node* temp = head;
-    for(int i = 1; i <= locate; i++){
-        temp = temp->next;
+    Node*temp = head;
+    if(locate == 1){
+        return temp;
+    }else{
+        for(int i = 1; i < locate; i++){
+            temp = temp->next;
+        }
     }
     return temp;
 }

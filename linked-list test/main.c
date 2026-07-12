@@ -56,6 +56,11 @@ int main(){
                 printf("请输入所查找的值：");
                 scanf("%d", &value);
                 target = searchByValue(head, value);
+                if(target != NULL){
+                    printf("该节点存在！\n");
+                }else{
+                    printf("该节点不存在！\n");
+                }
                 break;
                 
                 case 2:
@@ -63,11 +68,17 @@ int main(){
                 printf("请输入所查找的位置；");
                 scanf("%d", &locate);
                 target = searchByLocate(head, locate);
+                if(target != NULL){
+                    printf("查找节点值为：%d\n", target->data);
+                }else{
+                    printf("该节点不存在！\n");
+                }
                 break;
                 
                 default:
                 break;
             }
+            break;
             
         case 4:
             freeList(head);
