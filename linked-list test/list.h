@@ -6,10 +6,11 @@ typedef struct Node{
     struct Node* next;
 }Node;
 
-Node* createNode(Node* tail, int data);
+Node* createNode(int data);
 void freeList(Node* head);
 Node* searchByValue(Node* head, int value);
 Node* searchByLocate(Node* head, int locate);
-
+Node* insert(Node* head, int num);
+Node* delete(Node* head, int a);
 
 #endif // LISTH

@@ -6,11 +6,13 @@
 int main(){
     Node* head = NULL;
     Node* tail = NULL;
-
+    int num;
     printf("1.创建链表\n");
     printf("2.打印链表\n");
     printf("3.查找节点\n");
-    printf("4.退出程序\n");
+    printf("4.插入节点\n");
+    printf("5.删除节点\n");
+    printf("0.退出程序\n");
     while(1){
         int choice;
         printf("请选择功能：");
@@ -19,16 +21,21 @@ int main(){
         switch (choice)
         {
         case 1:
-            int n, m;
+            int m;
+            Node* newNode;
             printf("请输入链表节点个数：");
-            scanf("%d", &n);
+            scanf("%d", &num);
             printf("请输入链表节点保存的数字：");
 
-            for(int i = 0; i < n; i++){
+            for(int i = 0; i < num; i++){
                 scanf("%d", &m);
-                tail = createNode(tail, m);
+                newNode = createNode(m);
                 if(head == NULL){
-                    head = tail;
+                    head = newNode;
+                    tail = newNode;
+                }else{
+                    tail->next = newNode;
+                    tail = newNode;
                 };
             }
             break;
@@ -79,8 +86,21 @@ int main(){
                 break;
             }
             break;
-            
+
         case 4:
+        head = insert(head, num);
+        num++;
+        printf("插入完成！\n");
+        break;
+
+        case 5:
+        int a;
+        printf("请输入删除值：");
+        scanf("%d", &a);
+        head = delete(head, a);
+        break;
+            
+        case 0:
             freeList(head);
             printf("感谢使用，再见！\n");
             return 0;
