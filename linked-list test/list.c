@@ -22,25 +22,36 @@ void freeList(Node* head){
 
 Node* searchByValue(Node* head, int value){
     Node* temp = head;
-    while(temp->data != value && temp != NULL){
+    while(temp != NULL && temp->data != value){
         temp = temp->next;
     }
     return temp;
 }
 
-Node* searchByLocate(Node* head, int locate){
+void searchByLocate(Node* head, int num){
+    if(head == NULL){
+        printf("链表为空，请先建立链表！\n");
+        return;
+    }
     Node*temp = head;
+    int locate;
+    printf("请输入查询节点位置：");
+    scanf("%d", &locate);
+    while(locate > num || locate < 1){
+        printf("该位置超出链表范围，请重新输入！\n");
+        scanf("%d", &locate);
+    }
     if(locate == 1){
-        return temp;
+        printf("%d\n", head->data);
     }else{
         for(int i = 1; i < locate; i++){
             temp = temp->next;
         }
+        printf("%d\n", temp->data);
     }
-    return temp;
 }
 
-Node* insert(Node* head, int num){
+Node* insert(Node* head, int num, Node** tail){
     int data, locate;
     printf("请输入插入数据：");
     scanf("%d", &data);
@@ -48,6 +59,16 @@ Node* insert(Node* head, int num){
     scanf("%d", &locate);
     Node* newNode = createNode(data);
     Node* temp = NULL;
+    
+    while(locate < 1 || locate > (num + 1)){
+        printf("该位置超出范围,请重新输入！\n");
+        scanf("%d", &locate);
+    }
+    
+        if(locate == (num + 1)){
+            *tail = newNode;
+        }
+
     if(locate == 1){
         newNode->next = head;
         return newNode;
@@ -60,12 +81,13 @@ Node* insert(Node* head, int num){
         temp->next = newNode;
         return head;
     }
+
 }
 
 Node* delete(Node* head, int a){
     Node* temp = head;
     Node* prev = NULL;
-    while(temp->data != a && temp != NULL){
+    while(temp != NULL && temp->data != a){
         prev = temp;
         temp = temp->next;
     }

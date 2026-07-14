@@ -9,8 +9,8 @@ typedef struct Node{
 Node* createNode(int data);
 void freeList(Node* head);
 Node* searchByValue(Node* head, int value);
-Node* searchByLocate(Node* head, int locate);
-Node* insert(Node* head, int num);
+void searchByLocate(Node* head, int num);
+Node* insert(Node* head, int num, Node** tail);
 Node* delete(Node* head, int a);
 
 #endif // LISTH

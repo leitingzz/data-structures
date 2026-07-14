@@ -6,7 +6,7 @@
 int main(){
     Node* head = NULL;
     Node* tail = NULL;
-    int num;
+    int num = 0;
     printf("1.创建链表\n");
     printf("2.打印链表\n");
     printf("3.查找节点\n");
@@ -71,15 +71,7 @@ int main(){
                 break;
                 
                 case 2:
-                int locate;
-                printf("请输入所查找的位置；");
-                scanf("%d", &locate);
-                target = searchByLocate(head, locate);
-                if(target != NULL){
-                    printf("查找节点值为：%d\n", target->data);
-                }else{
-                    printf("该节点不存在！\n");
-                }
+                searchByLocate(head, num);
                 break;
                 
                 default:
@@ -88,7 +80,7 @@ int main(){
             break;
 
         case 4:
-        head = insert(head, num);
+        head = insert(head, num, &tail);
         num++;
         printf("插入完成！\n");
         break;
