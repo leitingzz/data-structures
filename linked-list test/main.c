@@ -32,7 +32,7 @@ int main(){
                 newNode = createNode(m);
                 if(head == NULL){
                     head = newNode;
-                    tail = newNode;
+                    tail = newNode; 
                 }else{
                     tail->next = newNode;
                     tail = newNode;
