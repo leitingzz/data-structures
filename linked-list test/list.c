@@ -84,7 +84,7 @@ Node* insert(Node* head, int num, Node** tail){
 
 }
 
-Node* delete(Node* head, int a){
+Node* delete(Node* head, int a, Node** tail){
     Node* temp = head;
     Node* prev = NULL;
     while(temp != NULL && temp->data != a){
@@ -96,6 +96,10 @@ Node* delete(Node* head, int a){
         free(temp);
         printf("删除完成！\n");
         
+    }else if(temp == *tail){
+        *tail = prev;
+        free(temp);
+        pritnf("删除完成！\n");
     }else if(temp == NULL){
         printf("该值不存在！\n");
     }else{

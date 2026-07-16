@@ -89,7 +89,8 @@ int main(){
         int a;
         printf("请输入删除值：");
         scanf("%d", &a);
-        head = delete(head, a);
+        head = delete(head, a, &tail);
+        num--;
         break;
             
         case 0:

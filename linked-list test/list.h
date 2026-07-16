@@ -11,6 +11,6 @@ void freeList(Node* head);
 Node* searchByValue(Node* head, int value);
 void searchByLocate(Node* head, int num);
 Node* insert(Node* head, int num, Node** tail);
-Node* delete(Node* head, int a);
+Node* delete(Node* head, int a, Node** tail);
 
 #endif // LISTH
