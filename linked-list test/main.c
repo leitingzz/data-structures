@@ -12,6 +12,7 @@ int main(){
     printf("3.查找节点\n");
     printf("4.插入节点\n");
     printf("5.删除节点\n");
+    printf("6.反转链表\n");
     printf("0.退出程序\n");
     while(1){
         int choice;
@@ -89,8 +90,11 @@ int main(){
         int a;
         printf("请输入删除值：");
         scanf("%d", &a);
-        head = delete(head, a, &tail);
-        num--;
+        head = delete(head, a, &tail, &num);
+        break;
+
+        case 6:
+        head = reverseList(head);
         break;
             
         case 0:

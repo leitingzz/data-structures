@@ -6,7 +6,7 @@
 Node* createNode(int data){
     Node* newNode = (Node*)malloc(sizeof(Node));
     newNode->data = data;
-    newNode->next = NULL;
+    newNode->next = NULL;   
     return newNode;
 }
 
@@ -65,9 +65,9 @@ Node* insert(Node* head, int num, Node** tail){
         scanf("%d", &locate);
     }
     
-        if(locate == (num + 1)){
-            *tail = newNode;
-        }
+    if(locate == (num + 1)){
+        *tail = newNode;
+    }
 
     if(locate == 1){
         newNode->next = head;
@@ -84,28 +84,57 @@ Node* insert(Node* head, int num, Node** tail){
 
 }
 
-Node* delete(Node* head, int a, Node** tail){
+Node* delete(Node* head, int a, Node** tail, int*num){
     Node* temp = head;
     Node* prev = NULL;
     while(temp != NULL && temp->data != a){
         prev = temp;
         temp = temp->next;
     }
-    if(temp == head){
+
+    if(temp == NULL){
+    printf("该值不存在！\n");
+    }else if(temp == head){
         head = head->next;
         free(temp);
         printf("删除完成！\n");
+        (*num)--;
+        if(*num == 0){
+            *tail = NULL;
+        }
         
     }else if(temp == *tail){
         *tail = prev;
+     
         free(temp);
-        pritnf("删除完成！\n");
-    }else if(temp == NULL){
-        printf("该值不存在！\n");
+        temp = NULL;
+        printf("删除完成！\n");
+        (*num)--;
     }else{
         prev->next = temp->next;
         free(temp);
         printf("删除完成！\n");
+        (*num)--;
     }
     return head;
+}   
+
+Node* reverseList(Node* head){
+    if(head == NULL){
+        printf("链表为空！\n");
+        return head;
+    }else{
+        Node* prev = NULL;
+        Node* curr = head;
+        Node* next = head->next;
+        curr->next = prev;
+        while(next != NULL){
+            prev = curr;
+            curr = next;
+            next = curr->next;
+            curr->next = prev;
+        }
+        printf("链表完成反转！\n");
+        return curr;
+    }
 }
