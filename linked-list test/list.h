@@ -12,6 +12,7 @@ Node* searchByValue(Node* head, int value);
 void searchByLocate(Node* head, int num);
 Node* insert(Node* head, int num, Node** tail);
 Node* delete(Node* head, int a, Node** tail, int* num);
-Node* reverseList(Node* head);
+Node* reverseList(Node* head, Node** tail);
+Node* fideMiddle(Node* head, int num);
 
 #endif // LISTH

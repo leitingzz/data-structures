@@ -13,6 +13,7 @@ int main(){
     printf("4.插入节点\n");
     printf("5.删除节点\n");
     printf("6.反转链表\n");
+    printf("7.查找中间节点\n");
     printf("0.退出程序\n");
     while(1){
         int choice;
@@ -39,6 +40,7 @@ int main(){
                     tail = newNode;
                 };
             }
+            printf("创建完成！\n");
             break;
 
         case 2:
@@ -94,7 +96,12 @@ int main(){
         break;
 
         case 6:
-        head = reverseList(head);
+        head = reverseList(head, &tail);
+        break;
+
+        case 7:
+        Node* middle = fideMiddle(head, num);
+        printf("中间节点值为：%d\n", middle->data);
         break;
             
         case 0:

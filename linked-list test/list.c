@@ -119,11 +119,12 @@ Node* delete(Node* head, int a, Node** tail, int*num){
     return head;
 }   
 
-Node* reverseList(Node* head){
+Node* reverseList(Node* head, Node** tail){             //三指针反转
     if(head == NULL){
         printf("链表为空！\n");
         return head;
     }else{
+        *tail = head;
         Node* prev = NULL;
         Node* curr = head;
         Node* next = head->next;
@@ -136,5 +137,23 @@ Node* reverseList(Node* head){
         }
         printf("链表完成反转！\n");
         return curr;
+    }
+}
+
+Node* fideMiddle(Node* head, int num){
+    Node* fast = head;
+    Node* slow = head;
+    if(num % 2 == 0){
+        while(fast->next->next != NULL){
+            fast = fast->next->next;
+            slow = slow->next;
+        }
+        return slow->next;
+    }else{
+        while(fast->next != NULL){
+            fast = fast->next->next;
+            slow = slow->next;
+        }
+        return slow;
     }
 }
