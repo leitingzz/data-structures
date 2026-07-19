@@ -14,6 +14,9 @@ int main(){
     printf("5.删除节点\n");
     printf("6.反转链表\n");
     printf("7.查找中间节点\n");
+    printf("8.判断链表是否有环\n");
+    printf("9.将链表链接成环\n");
+    printf("10.将环断开\n");
     printf("0.退出程序\n");
     while(1){
         int choice;
@@ -101,7 +104,31 @@ int main(){
 
         case 7:
         Node* middle = fideMiddle(head, num);
-        printf("中间节点值为：%d\n", middle->data);
+        if(middle != NULL){
+            printf("中间节点值为：%d\n", middle->data);
+        }
+        break;
+
+        case 8:
+        hasCycle(head);
+        break;
+
+        case 9:
+        if(head == NULL){
+            printf("该链表为空！\n");
+        }else{
+         tail->next = head;
+         printf("链接完成！\n");
+        }
+        break;
+
+        case 10:
+        if(head == NULL){
+            printf("链表为空！\n");
+        }else{
+            tail->next = NULL;
+            printf("断开完成！\n");
+        }
         break;
             
         case 0:
@@ -115,7 +142,6 @@ int main(){
         }
 
     }
-    
     
     return 0;
 

@@ -143,6 +143,10 @@ Node* reverseList(Node* head, Node** tail){             //三指针反转
 Node* fideMiddle(Node* head, int num){
     Node* fast = head;
     Node* slow = head;
+    if(head == NULL){
+        printf("链表为空！\n");
+        return NULL;
+    }
     if(num % 2 == 0){
         while(fast->next->next != NULL){
             fast = fast->next->next;
@@ -157,3 +161,26 @@ Node* fideMiddle(Node* head, int num){
         return slow;
     }
 }
+
+void hasCycle(Node* head){
+    Node* fast = head;
+    Node* slow = head;
+    if(head == NULL){
+        printf("该链表为空！\n");
+        return;
+    }
+    while(fast->next != NULL){
+        fast = fast->next->next;
+        slow = slow->next;
+        if(fast == NULL){
+            printf("该链表无环！\n");
+            return;
+        }
+        if(fast == slow){
+            printf("该链表有环！\n");
+            return;
+        }
+    }
+    printf("该链表无环！\n");
+}
+

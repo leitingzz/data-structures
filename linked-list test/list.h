@@ -14,5 +14,6 @@ Node* insert(Node* head, int num, Node** tail);
 Node* delete(Node* head, int a, Node** tail, int* num);
 Node* reverseList(Node* head, Node** tail);
 Node* fideMiddle(Node* head, int num);
+void hasCycle(Node* head);
 
 #endif // LISTH
