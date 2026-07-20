@@ -16,4 +16,4 @@ Node* reverseList(Node* head, Node** tail);
 Node* fideMiddle(Node* head, int num);
 void hasCycle(Node* head);
 
-#endif // LISTH
+#endif 
