@@ -7,7 +7,16 @@ typedef struct TreeNode{
     struct TreeNode* right;
 }TreeNode;
 
+typedef struct queue{
+    TreeNode* node;
+    struct queue* next;
+}queue;
+
 TreeNode* insert(TreeNode* root, int value);
 void inorderprint(TreeNode* root);
+void preorderprint(TreeNode* root);
+void postorderprint(TreeNode* root);
+void* enqueue(queue** head, queue** tail, TreeNode* node);
+TreeNode* dequeue(queue** head, queue** tail);
 
 #endif

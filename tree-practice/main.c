@@ -4,8 +4,13 @@
 
 int main(){
     TreeNode* root = NULL;
+    queue* head = NULL;
+    queue* tail = NULL;
 
     printf("1.插入节点\n");
+    printf("2.前序遍历打印\n");
+    printf("3.中序遍历打印\n");
+    printf("4.后序遍历打印\n");
 
     while(1){
         int choice, value, num;
@@ -27,7 +32,18 @@ int main(){
             break;
         
         case 2:
+            preorderprint(root);
+            printf("\n");
+            break;
+
+        case 3:
             inorderprint(root);
+            printf("\n");
+            break;
+
+        case 4:
+            postorderprint(root);
+            printf("\n");
             break;
 
         default:
@@ -35,4 +51,5 @@ int main(){
         }
     }
 
+    return 0;
 }
