@@ -49,6 +49,9 @@ void postorderprint(TreeNode* root){
 }
 
 void enqueue(queue** head, queue** tail, TreeNode* node){
+    if(node == NULL){
+        return;
+    }
     queue* temp = (queue*)malloc(sizeof(queue));
     temp->node = node;
     temp->next = NULL;
@@ -79,4 +82,25 @@ TreeNode* dequeue(queue** head, queue** tail){
     *head = (*head)->next;
     free(temp);
     return node;
+}
+
+void levelorderPrint(TreeNode* root){
+    queue* head = NULL;
+    queue* tail = NULL;
+    enqueue(&head, &tail, root);
+    while(head != NULL){
+        TreeNode* temp = dequeue(&head, &tail);
+        printf("%d ", temp->data);
+        if(temp->left != NULL){
+            enqueue(&head, &tail, temp->left);
+        }
+        if(temp->right != NULL){
+            enqueue(&head, &tail, temp->right);
+        }
+    }
+    return;
+}
+
+int countNodes(TreeNode*root){
+    
 }

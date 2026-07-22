@@ -16,7 +16,9 @@ TreeNode* insert(TreeNode* root, int value);
 void inorderprint(TreeNode* root);
 void preorderprint(TreeNode* root);
 void postorderprint(TreeNode* root);
-void* enqueue(queue** head, queue** tail, TreeNode* node);
+void enqueue(queue** head, queue** tail, TreeNode* node);
 TreeNode* dequeue(queue** head, queue** tail);
+void levelorderPrint(TreeNode* root);
+int countNodes(TreeNode* root);
 
 #endif

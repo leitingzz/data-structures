@@ -4,14 +4,13 @@
 
 int main(){
     TreeNode* root = NULL;
-    queue* head = NULL;
-    queue* tail = NULL;
 
     printf("1.插入节点\n");
     printf("2.前序遍历打印\n");
     printf("3.中序遍历打印\n");
     printf("4.后序遍历打印\n");
-
+    printf("5.层序遍历打印\n");
+    printf("6.统计节点总数\n");
     while(1){
         int choice, value, num;
 
@@ -43,6 +42,11 @@ int main(){
 
         case 4:
             postorderprint(root);
+            printf("\n");
+            break;
+
+        case 5:
+            levelorderPrint(root);
             printf("\n");
             break;
 
