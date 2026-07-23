@@ -11,6 +11,7 @@ int main(){
     printf("4.后序遍历打印\n");
     printf("5.层序遍历打印\n");
     printf("6.统计节点总数\n");
+    printf("7.求树的高度\n");
     while(1){
         int choice, value, num;
 
@@ -49,6 +50,12 @@ int main(){
             levelorderPrint(root);
             printf("\n");
             break;
+
+        case 6:
+            printf("节点总数为：%d\n", countNodes(root));
+
+        case 7:
+            printf("树的高度为；%d\n", getHeight(root));
 
         default:
             break;

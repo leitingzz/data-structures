@@ -102,5 +102,35 @@ void levelorderPrint(TreeNode* root){
 }
 
 int countNodes(TreeNode*root){
-    
+
+    if (root == NULL){
+        return 0;
+    }
+
+    return 1 + countNodes(root->left) + countNodes(root->right);
+}
+
+int getHeight(TreeNode* root){
+    if(root == NULL){
+        return 0;
+    }
+    if(getHeight(root->left) > getHeight(root->right)){
+        return 1 + getHeight(root->left);
+    }else{
+        return 1 + getHeight(root->right);
+    }
+}
+
+TreeNode* search(TreeNode*root, int value){
+    if(root == NULL){
+        return NULL;
+    }
+    if(root->data == value){
+        return root;
+    }
+    if(value < root->data){
+        return search(root->left, value);
+    }else{
+        return search(root->right, value);
+    }
 }

@@ -20,5 +20,6 @@ void enqueue(queue** head, queue** tail, TreeNode* node);
 TreeNode* dequeue(queue** head, queue** tail);
 void levelorderPrint(TreeNode* root);
 int countNodes(TreeNode* root);
-
+int getHeight(TreeNode* root);
+TreeNode* search(TreeNode* root, int value);
 #endif
