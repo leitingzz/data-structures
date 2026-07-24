@@ -114,10 +114,14 @@ int getHeight(TreeNode* root){
     if(root == NULL){
         return 0;
     }
-    if(getHeight(root->left) > getHeight(root->right)){
-        return 1 + getHeight(root->left);
+
+    int leftHeight = getHeight(root->left);
+    int rightHeight = getHeight(root->right);
+
+    if(leftHeight > rightHeight){
+        return 1 + leftHeight;
     }else{
-        return 1 + getHeight(root->right);
+        return 1 + rightHeight;
     }
 }
 
@@ -133,4 +137,33 @@ TreeNode* search(TreeNode*root, int value){
     }else{
         return search(root->right, value);
     }
+}
+
+int isValidBSTHelper(TreeNode* root, int max, int min){
+    int a, m, n;
+    if(root == NULL){
+        return 1;
+    }
+    if(min < root->data && root->data < max){
+        a = 1;
+    }else{
+        a = -1;
+    }
+
+    m = isValidBSTHelper(root->left, root->data, min);
+    n = isValidBSTHelper(root->right, max, root->data);
+    if(a == 1 && m == 1 && n == 1){
+        return 1;
+    }else{
+        return -1;
+    }
+}
+
+void isValidBST(TreeNode* root){
+    if( isValidBSTHelper(root, 999999, -999999) == 1){
+        printf("该树是合法二叉搜索树！\n");
+    }else{
+        printf("该树不是合法二叉搜索树！\n");
+    }
+    return;
 }

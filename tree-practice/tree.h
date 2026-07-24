@@ -22,4 +22,7 @@ void levelorderPrint(TreeNode* root);
 int countNodes(TreeNode* root);
 int getHeight(TreeNode* root);
 TreeNode* search(TreeNode* root, int value);
+int isValidBSTHelper(TreeNode*root, int max, int min);
+void isValidBST(TreeNode* root);
+
 #endif
