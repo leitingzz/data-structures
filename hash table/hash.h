@@ -11,5 +11,6 @@ int hashFunc(int data);
 void insert(Node* hash_table[]);
 void search(Node* hash_table[]);
 void delete(Node* hash_table[]);
+void printHashTable(Node* hash_table[]);
 
 #endif

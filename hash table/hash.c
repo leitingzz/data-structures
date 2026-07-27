@@ -73,3 +73,20 @@ void delete(Node* hash_table[]){
     printf("该数据不存在！\n");
     return;
 }
+
+void printHashTable(Node* hash_table[]){
+    for(int i = 0; i < NUM; i++){
+        printf("格子%d:", i);
+        if (hash_table[i] == NULL){
+            printf("空\n");
+        }else{
+            Node* temp = hash_table[i];
+            while(temp != NULL){
+                printf("%d ", temp->data);
+                temp = temp->next;
+            }
+            printf("\n");
+        }
+    }
+    return;
+}

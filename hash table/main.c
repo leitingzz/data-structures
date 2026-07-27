@@ -11,6 +11,7 @@ int main(){
     printf("1.插入数据\n");
     printf("2.查找数据\n");
     printf("3.删除数据\n");
+    printf("4.打印哈希表\n");
 
     while(1){
         int choice;
@@ -29,6 +30,10 @@ int main(){
 
             case 3:
             delete(hash_table);
+            break;
+
+            case 4:
+            printHashTable(hash_table);
             break;
 
             default:
