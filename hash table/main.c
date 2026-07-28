@@ -13,7 +13,7 @@ int main(){
     printf("3.删除数据\n");
     printf("4.打印哈希表\n");
 
-    while(1){
+    while(1){ 
         int choice;
         printf("请选择功能：");
         scanf("%d", &choice);
