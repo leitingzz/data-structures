@@ -58,7 +58,7 @@ void enqueue(queue** head, queue** tail, TreeNode* node){
 
     if(*head == NULL){
         *head = temp;
-        *tail = temp;
+        *tail = temp; 
     }else{
         (*tail)->next = temp;
         *tail = temp;
