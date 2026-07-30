@@ -50,9 +50,9 @@ void postorderprint(TreeNode* root){
 
 void enqueue(queue** head, queue** tail, TreeNode* node){
     if(node == NULL){
-        return;
+        return; 
     }
-    queue* temp = (queue*)malloc(sizeof(queue));
+    queue* temp = (queue*)malloc(sizeof(queue)); 
     temp->node = node;
     temp->next = NULL;
 
